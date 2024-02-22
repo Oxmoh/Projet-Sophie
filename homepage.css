@@ -116,11 +116,19 @@
     display: block;
 }
 
-.picture1, .picture2, .picture3 {
+.picture1, .picture2 {
     margin-top: 1%; /* espace avec les photos du dessus */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.picture3 {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 15%;
+    margin-top: 1%;
+    max-width: 100%;
 }
 
 .contact1 {
