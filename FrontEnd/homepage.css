@@ -1,0 +1,200 @@
+* {
+    /* remise à zero des marges et espaces de la page */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    /* séparation des deux block */
+    margin-top: 3%;
+}
+
+.navbar img {
+    margin-left: -5%;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    text-decoration: none;
+    align-items: center;
+    /* alignement des objets cliquables sur la droite */
+}
+
+.menu li a {
+    text-decoration: none;
+}
+
+.projet,
+.contact,
+.login,
+.icone {
+    margin-right: 12%;
+    /* espacement entre chaque objet */
+}
+
+.presentation {
+    display: flex;
+    align-items: center;
+    /* mise en page de la photo et du texte de présentation */
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.presentation img {
+    max-width: 30%;
+    /* limitation de la largeur de la photo */
+    margin-right: 5%;
+}
+
+.presentation .text {
+    max-width: 50%;
+    /* limitation de la largeur occupée par le texte de présentation */
+}
+
+.presentation p {
+    font-family: 'Work Sans', sans-serif;
+    text-align: left;
+    /* je centre le texte dans la boite */
+}
+
+.presentation h2 {
+    color: #1D6154;
+    text-align: center;
+    /* titre centré */
+    font-family: 'Syne', sans-serif;
+}
+
+.projets h2 {
+    color: #1D6154;
+    text-align: center;
+    /* titre centré */
+    margin-top: 10%;
+    font-family: 'Syne', sans-serif;
+}
+
+
+.filtres {
+    display: flex;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+.filtres button {
+    background-color: #fff;
+    color: #1D6154;
+    font-family: 'Syne', sans-serif;
+    border-radius: 60px;
+    margin: 5px;
+    /*Espacement entre les boutons */
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.filtres button:hover {
+    background-color: #1D6154;
+    /* changement de couleur lorsque je survole avec la souris */
+    color: white;
+}
+
+.myprojets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    grid-gap: 10px;
+    margin-top: 5%;
+    margin-left: 20px;
+}
+
+.myprojets img {
+    max-width: 95%;
+
+}
+
+/* .photo {
+    margin: 0 10px; /* Espacement entre les photos */
+/* max-width: 22%;
+}
+
+.photo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}  */
+
+
+#contact1 {
+    margin-top: 5%;
+    color: #1D6154;
+    font-family: 'Syne', sans-serif;
+    text-align: center;
+}
+
+#contact1 p {
+    margin-top: 1%;
+    font-family: 'Work Sans', sans-serif;
+    color: black;
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulaire input {
+    align-self: center;
+    /* champs remplissable de formulaire */
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 250px;
+}
+
+.envoyer {
+    text-decoration: none;
+    color: #1D6154;
+    font-family: 'Syne', sans-serif;
+    border-radius: 60px;
+    border: 1px solid #ccc;
+    /* création de bouton coloré avec radius */
+    padding: 5px;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.envoyer:hover {
+    background-color: #1D6154;
+    /* changement de couleur lorsque je survole avec la souris */
+    color: white;
+}
+
+.Mentions {
+    margin-top: 7%;
+    margin-bottom: 3%;
+    display: flex;
+    justify-content: end;
+    margin-right: 7%;
+}
+
+.mdp {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    color: #3D3D3D;
+}
+
+.contact2 {
+    margin-top: 5%;
+    color: #1D6154;
+    font-family: 'Syne', sans-serif;
+    text-align: center;
+}
+
+.contact2 p {
+    margin-top: 1%;
+    font-family: 'Work Sans', sans-serif;
+    color: black;
+}

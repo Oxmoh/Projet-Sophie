@@ -1,0 +1,182 @@
+const fetchApi = async (url) => {
+  try {
+    const response = await fetch(url);
+    return response.ok ? await response.json() : null;
+  } catch (error) {
+    console.error("Une erreur est survenue", error);
+    return null;
+  }
+};
+
+// Appel immédiat de la fonction asynchrone anonyme
+
+
+// const getApi = (async () => {
+//   const works = await fetchApi();
+//   console.log(works);
+//   const galleryPictures = document.getElementById("gallery")
+//   works.forEach(element => {
+//     let newGal = document.createElement("div");
+//     let div = galleryPictures.appendChild(newGal);
+//     // let img = document.createElement("img");
+//     let img = div.appendChild(document.createElement("img"));
+//     img.src = element.imageUrl
+//     let par = div.appendChild(document.createElement("p"));
+//     par.textContent = element.title;
+//     // newGal.textContent = "Bonjour"
+//   });
+// })();
+
+// Fonction pour créer un élément HTML avec du texte à l'intérieur
+function createElemWithText(tag, text) {
+  const elem = document.createElement(tag); // Crée l'élément HTML
+  elem.innerText = text; // Définit le texte de l'élément
+  return elem; // Retourne l'élément créé
+}
+
+// Fonction pour créer une figure (élément <figure>) avec une image et une légende
+function createFigure({ id, imageUrl, title }) {
+  const figure = document.createElement("figure");
+  figure.dataset.id = id; // Stocke l'ID dans l'attribut data-id de la figure
+
+  const img = document.createElement("img"); // Crée l'élément image
+  img.src = imageUrl; // Définit l'URL de l'image
+
+  const caption = createElemWithText("figcaption", title); // Crée la légende
+
+  figure.append(img, caption); // Ajoute l'image et la légende à la figure
+  return figure; // Retourne la figure créée
+}
+
+
+
+const displayWorks = (works, container) => {
+  container.innerHTML = "";
+  works.forEach((work) => container.appendChild(createFigure(work)));
+};
+
+// Fonction pour configurer et ajouter des boutons de filtre basés sur les catégories des travaux
+function setupButtons(works, filterContainer, displayContainer) {
+  // Crée un bouton qui permet d'afficher tous les travaux
+  const btnAll = createElemWithText("button", "Tous");
+  // Ajoute un écouteur d'événement sur le bouton pour afficher tous les travaux lorsqu'il est cliqué
+  btnAll.addEventListener("click", () => displayWorks(works, displayContainer));
+  // Ajoute le bouton au conteneur de filtres
+  filterContainer.appendChild(btnAll);
+
+  // Détermine les catégories uniques parmi tous les travaux pour éviter les doublons
+  const uniqueCategories = [
+    ...new Set(works.map((work) => work.category.name)),
+  ];
+
+  // Pour chaque catégorie unique trouvée, crée un nouveau bouton de filtre
+  uniqueCategories.forEach((category) => {
+    // Crée un bouton avec le nom de la catégorie
+    const btn = createElemWithText("button", category);
+    // Ajoute un écouteur d'événement sur le bouton pour filtrer et afficher les travaux de cette catégorie lorsqu'il est cliqué
+    btn.addEventListener("click", () => {
+      // Filtre les travaux pour ne garder que ceux qui appartiennent à la catégorie cliquée
+      const filteredWorks = works.filter(
+        (work) => work.category.name === category
+      );
+      // Affiche les travaux filtrés dans le conteneur d'affichage
+      displayWorks(filteredWorks, displayContainer);
+    });
+    // Ajoute le bouton de catégorie au conteneur de filtres
+    filterContainer.appendChild(btn);
+  });
+}
+
+
+// Explications supplémentaires :
+
+// works : un tableau contenant les données de tous les travaux, où chaque travail a une catégorie.
+// filterContainer : l'élément DOM (Document Object Model) dans lequel les boutons de filtre seront ajoutés. Cela permet à l'utilisateur de choisir les travaux à afficher en fonction de la catégorie.
+// displayContainer : l'élément DOM où les travaux filtrés seront affichés.
+// createElemWithText : une fonction qui crée un élément HTML (dans ce cas, un bouton) et définit son texte. Cette fonction est appelée pour créer le bouton "Tous" et les boutons pour chaque catégorie unique.
+// displayWorks : une fonction appelée pour afficher les travaux dans le displayContainer. Elle prend en compte le filtre appliqué par les boutons de catégorie.
+// Ce code utilise des fonctions d'ordre supérieur comme .map(), .filter(), et .forEach() pour travailler avec des tableaux, ainsi que l'utilisation de Set pour filtrer les valeurs uniques, ce qui sont des concepts importants en JavaScript.
+
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+
+// Initialisation
+async function recupererTousMesProjets() {
+  console.log("Page entièrement chargée");
+
+  const works = await fetchApi("http://localhost:5678/api/works");
+  const sectionProjet = document.querySelector(".myprojets");
+  if (works && sectionProjet)
+  displayWorks(works, sectionProjet);
+
+  const filtresDiv = document.querySelector(".filtres");
+  if (works && filtresDiv) setupButtons(works, filtresDiv, sectionProjet);
+}
+recupererTousMesProjets();
+
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
+
+// LOGIN
+
+// Poste des données à l'API
+const postToAPI = async (url, body) => {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    return { data: await response.json(), status: response.status };
+  } catch (error) {
+    console.error("Une erreur est survenue", error);
+    return null;
+  }
+};
+
+// Cette fonction est appelée lors de la soumission du formulaire de connexion
+async function handleFormSubmission(event) {
+  // Empêche le comportement par défaut du formulaire (rechargement de la page)
+  event.preventDefault();
+
+  // Récupère les valeurs saisies par l'utilisateur dans les champs du formulaire
+  const email = document.querySelector("#login-email").value;
+  const password = document.querySelector("#login-password").value;
+
+  // Envoie une requête asynchrone à l'API pour tenter de connecter l'utilisateur
+  const response = await postToAPI("http://localhost:5678/api/users/login", {
+    email,
+    password,
+  });
+
+  // Si la réponse est positive (statut 200), stocke les informations de l'utilisateur et redirige vers la page d'accueil
+  if (response && response.status === 200) {
+    console.log("connexion utilisateur réussie");
+    // Stocke l'identifiant de l'utilisateur et le token dans le stockage local du navigateur
+    localStorage.setItem("user", JSON.stringify(response.data.userId));
+    localStorage.setItem("token", response.data.token);
+    // Redirige l'utilisateur vers la page d'accueil
+    location.href = "homepage.html";
+  } else {
+    // Si les identifiants sont incorrects, affiche un message d'erreur
+    document.getElementById("error-message").textContent =
+      "Identifiant ou mot de passe incorrect";
+  }
+}
+
+// Sélectionne le formulaire de connexion dans le DOM
+const form = document.querySelector(".contact2");
+// Si le formulaire existe, lui ajoute un écouteur d'événements pour gérer sa soumission
+if (form) {
+  form.addEventListener("submit", handleFormSubmission);
+}
