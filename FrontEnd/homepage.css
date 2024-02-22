@@ -165,6 +165,10 @@
     padding-right: 35px;
 }
 
+.button {
+    padding-top: 20px;
+}
+
 .envoyer:hover {
     background-color: #1D6154;
     /* changement de couleur lorsque je survole avec la souris */
@@ -191,10 +195,4 @@
     color: #1D6154;
     font-family: 'Syne', sans-serif;
     text-align: center;
-}
-
-.contact2 p {
-    margin-top: 1%;
-    font-family: 'Work Sans', sans-serif;
-    color: black;
 }
