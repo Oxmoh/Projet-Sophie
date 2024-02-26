@@ -7,9 +7,16 @@
 .admin-bar {
     background-color: black;
     height: 39px;
+    top: 0;
     position: sticky; /*position fixe de la barre*/
+    display: flex;
+    justify-content: center; 
+    align-items: center;
 }
 
+#edit-mod-btn {
+    cursor: pointer;
+}
 
 button p {
     color: white;
@@ -50,9 +57,9 @@ a {
     text-decoration: none;
 }
 
-.login {
+/* .login {
     cursor: pointer;
-}
+} */
 
 .projet,
 .contact,
@@ -61,9 +68,10 @@ a {
     /* espacement entre chaque objet */
 }
 
-.insta-icone {
+/* .insta-icone {
     margin-left: 7%;
-}
+} */
+
 .presentation {
     display: flex;
     align-items: center;
