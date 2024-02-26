@@ -4,6 +4,31 @@
     padding: 0;
 }
 
+.admin-bar {
+    background-color: black;
+    height: 39px;
+    position: sticky;
+}
+
+.hidden {
+    display: none;
+}
+
+button p {
+    color: white;
+}
+
+.fa-pen-to-square {
+    color: white;
+    padding-right: 5px;
+}
+
+.open-modal {
+    display: flex;
+    border-style: none;
+    background-color: black;
+}
+
 .navbar {
     display: flex;
     justify-content: space-around;
@@ -23,9 +48,13 @@
     /* alignement des objets cliquables sur la droite */
 }
 
-.menu li a {
+a {
     text-decoration: none;
 }
+
+/* .login {
+    cursor: pointer;
+} */
 
 .projet,
 .contact,

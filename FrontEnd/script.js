@@ -114,7 +114,7 @@ async function recupererTousMesProjets() {
   const works = await fetchApi("http://localhost:5678/api/works");
   const sectionProjet = document.querySelector(".myprojets");
   if (works && sectionProjet)
-  displayWorks(works, sectionProjet);
+    displayWorks(works, sectionProjet);
 
   const filtresDiv = document.querySelector(".filtres");
   if (works && filtresDiv) setupButtons(works, filtresDiv, sectionProjet);
@@ -180,3 +180,81 @@ const form = document.querySelector(".contact2");
 if (form) {
   form.addEventListener("submit", handleFormSubmission);
 }
+
+
+// Se déconnecter du site
+// const tokenAuth = localStorage.getItem("token");
+// const handleLogout = () => {
+//   localStorage.removeItem("user");
+//   localStorage.removeItem("token");
+//   alert("Vous avez été déconnecté.");
+//   location.reload();
+// }
+
+// function resetChamps() {
+//   const resetEmail = document.querySelector("#login-email");
+//   const resetPassword = document.querySelector("#login-password");
+//   if (resetEmail && resetPassword) {
+//     resetEmail.value = "";
+//     resetPassword.value = "";
+//   }
+// };
+
+// if (tokenAuth) {
+//   document.querySelector(".login").textContent = "logout";
+// }
+
+// const disconect = document.querySelector(".menu");
+// if (tokenAuth) {
+//   disconect.addEventListener("click", handleFormSubmission, handleLogout, resetChamps);
+// }
+
+
+
+// Fonction appelée pour déconnecter l'utilisateur
+const handleLogout = () => {
+  // Supprime les informations de l'utilisateur et le token d'authentification du stockage local
+  localStorage.removeItem("user");
+  localStorage.removeItem("token");
+  // Recharge la page pour refléter l'état déconnecté de l'utilisateur
+  location.reload();
+  // Réinitialise les champs du formulaire de connexion pour effacer les entrées précédentes
+  const emailElem = document.getElementById("login-email");
+  const passwordElem = document.getElementById("login-password");
+  if (emailElem && passwordElem) {
+    emailElem.value = "";
+    passwordElem.value = "";
+  }
+};
+
+
+  
+// Vérifie si un token d'authentification est présent et ajuste l'interface en conséquence
+function checkTokenLogin() {
+  // Récupère le token d'authentification du stockage local
+  const tokenAuth = localStorage.getItem("token");
+  // Sélectionne différents éléments de l'interface
+  const loginLink = document.querySelector(".login");
+  const adminBar = document.getElementById("admin-bar");
+  const allFilterBtn = document.querySelector(".filtres");
+  const modifierBtn = document.getElementById("edit-mod-btn");
+
+  // Si un token est présent, ajuste l'interface pour un utilisateur connecté
+  if (tokenAuth) {
+    loginLink.textContent = "logout"; // Change le texte du lien de connexion en "logout"
+    // Rend visible la barre d'administration et le bouton de modification, et cache le bouton de filtre
+    if (adminBar) adminBar.classList.remove("hidden");
+    if (allFilterBtn) allFilterBtn.classList.add("hidden");
+    if (modifierBtn) modifierBtn.classList.remove("hidden");
+    // Ajoute un écouteur d'événement pour gérer la déconnexion
+    loginLink.addEventListener("click", handleLogout);
+  } else {
+    // Ajuste l'interface pour un utilisateur non connecté
+    loginLink.textContent = "login"; // Garde ou remet le texte du lien en "login"
+    // Cache la barre d'administration et le bouton de modification
+    if (adminBar) adminBar.classList.add("hidden");
+    if (modifierBtn) modifierBtn.parentNode.removeChild(modifierBtn);
+  }
+}
+
+checkTokenLogin();
