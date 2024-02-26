@@ -7,7 +7,7 @@
 .admin-bar {
     background-color: black;
     height: 39px;
-    position: sticky;
+    position: sticky; /*position fixe de la barre*/
 }
 
 
@@ -227,5 +227,5 @@ a {
 }
 
 .hidden {
-    display: none;
+    display: none; /*mis en dernier pour qu'il s'applique sur les balise à ne pas afficher au premier chargement de page*/
 }
