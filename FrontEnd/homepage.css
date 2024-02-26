@@ -10,9 +10,6 @@
     position: sticky;
 }
 
-.hidden {
-    display: none;
-}
 
 button p {
     color: white;
@@ -224,4 +221,8 @@ a {
     color: #1D6154;
     font-family: 'Syne', sans-serif;
     text-align: center;
+}
+
+.hidden {
+    display: none;
 }
