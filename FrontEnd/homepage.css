@@ -28,13 +28,13 @@ button p {
 
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     /* séparation des deux block */
     margin-top: 3%;
 }
 
 .navbar img {
-    margin-left: -5%;
+    margin-left: 7%;
 }
 
 .menu {
@@ -42,6 +42,7 @@ button p {
     list-style-type: none;
     text-decoration: none;
     align-items: center;
+    margin-right: 10%;
     /* alignement des objets cliquables sur la droite */
 }
 
@@ -49,18 +50,20 @@ a {
     text-decoration: none;
 }
 
-/* .login {
+.login {
     cursor: pointer;
-} */
+}
 
 .projet,
 .contact,
-.login,
-.icone {
-    margin-right: 12%;
+.login {
+    margin-right: 13%;
     /* espacement entre chaque objet */
 }
 
+.insta-icone {
+    margin-left: 7%;
+}
 .presentation {
     display: flex;
     align-items: center;

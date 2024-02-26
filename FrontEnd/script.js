@@ -217,7 +217,7 @@ const handleLogout = () => {
   localStorage.removeItem("user");
   localStorage.removeItem("token");
   // Recharge la page pour refléter l'état déconnecté de l'utilisateur
-  location.reload();
+  location.href="homepage.html"();
   // Réinitialise les champs du formulaire de connexion pour effacer les entrées précédentes
   const emailElem = document.getElementById("login-email");
   const passwordElem = document.getElementById("login-password");
