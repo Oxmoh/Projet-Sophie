@@ -1,4 +1,4 @@
-const fetchApi = async (url) => {
+const fetchApi = async (url) => {   // Appel immédiat de la fonction asynchrone anonyme
   try {
     const response = await fetch(url);
     return response.ok ? await response.json() : null;
@@ -8,24 +8,7 @@ const fetchApi = async (url) => {
   }
 };
 
-// Appel immédiat de la fonction asynchrone anonyme
 
-
-// const getApi = (async () => {
-//   const works = await fetchApi();
-//   console.log(works);
-//   const galleryPictures = document.getElementById("gallery")
-//   works.forEach(element => {
-//     let newGal = document.createElement("div");
-//     let div = galleryPictures.appendChild(newGal);
-//     // let img = document.createElement("img");
-//     let img = div.appendChild(document.createElement("img"));
-//     img.src = element.imageUrl
-//     let par = div.appendChild(document.createElement("p"));
-//     par.textContent = element.title;
-//     // newGal.textContent = "Bonjour"
-//   });
-// })();
 
 // Fonction pour créer un élément HTML avec du texte à l'intérieur
 function createElemWithText(tag, text) {
@@ -228,7 +211,7 @@ const handleLogout = () => {
 };
 
 
-  
+
 // Vérifie si un token d'authentification est présent et ajuste l'interface en conséquence
 function checkTokenLogin() {
   // Récupère le token d'authentification du stockage local
@@ -258,3 +241,68 @@ function checkTokenLogin() {
 }
 
 checkTokenLogin();
+
+
+// Sélection de la modal pour ensuite l'afficher lors du click ou la retirer
+
+function myModal(isVisible) {
+  const editModal = document.getElementById("edit-modal");
+  editModal.classList.toggle("mystyle");
+  if (editModal) {
+    // Ajoute ou retire la classe "hidden" en fonction de l'argument isVisible
+    editModal.classList.toggle("hidden", !isVisible);
+  }
+}
+
+// Fonction pour ouvrir la modal et afficher les projets existants
+// function openModal() {
+//   const allEditBtn = document.querySelectorAll(".open-modal");
+//   allEditBtn.forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//       myModal(true); // Affiche la modale
+   
+
+//   // Récupérer les images en les clonant pour les afficher dans la modal
+//   const imageModal = () => {
+//     const existingProjects = document.getElementById("existing-projects");
+//     const clone = document.querySelector(".myprojets").cloneNode(true);
+//     existingProjects.appendChild(clone);
+//   };
+//   imageModal();
+// });
+// });
+// }
+// Pour chaque bouton, ajoute un écouteur d'événement qui ouvre la modale
+
+function openModal() {
+  // Sélectionne tous les boutons qui ouvrent la modale
+  const allEditBtn = document.querySelectorAll(".open-modal");
+  // Pour chaque bouton, ajoute un écouteur d'événement qui ouvre la modale
+
+  allEditBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      myModal(true); // Affiche la modale
+
+      // Clone le contenu existant des projets pour l'afficher dans la modale
+
+      const existingProjects = document
+        .querySelector(".projets")
+        .cloneNode(true);
+      const modalProjects = document.getElementById("existing-projects");
+      modalProjects.innerHTML = ""; // Vide le contenu actuel
+      // Pour chaque image dans les projets clonés, crée un conteneur et l'ajoute à la modale
+      existingProjects.querySelectorAll("img").forEach((img) => {
+        const imgContainer = document.createElement("div");
+        imgContainer.setAttribute("class", "img-container");
+        imgContainer.setAttribute("data-id", img.closest("figure").dataset.id);
+        imgContainer.innerHTML = `${img.outerHTML}<button class="delete-icon"><i class="fa-solid fa-trash-can"></i></button>`;
+        modalProjects.appendChild(imgContainer);
+      });
+    });
+  });
+}
+
+openModal();
+
+
+

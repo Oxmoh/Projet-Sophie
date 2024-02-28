@@ -43,12 +43,13 @@
     </header>
     <br>
     <main>
-        <!-- présentation avec photo-->
+
+        <!-- Présentation avec photo-->
 
         <div class="presentation container">
             <img src="image/sophie-bluel.png" alt="Photo-de-Sophie">
             <div class="text">
-                <h2>Mon projet</h2>
+                <h2>Designer d'espace</h2>
                 <br>
                 <p>Je raconte votre histoire, je valorise vos idées. Je vous<br>accompagne de la conception à la
                     livraison
@@ -61,7 +62,7 @@
             </div>
         </div>
 
-        <!-- plusieurs bouton de choix pour filtrer par catégorie -->
+        <!-- Plusieurs bouton de choix pour filtrer par catégorie -->
 
         <div class="projets">
             <h2>Mes projets</h2>
@@ -85,6 +86,7 @@
                     <a href="" class="envoyer">Envoyer</a>
                 </div>
             </div>
+        </div>
     </main>
 
     <!--Footer-->
@@ -92,6 +94,80 @@
     <div class="Mentions container">
         <p>Mentions légales</p>
     </div>
+
+    <!-- Bloc parent modal -->
+
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-content">
+          <button class="close-btn" id="close-modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <h3 class="galerie-photo">Galerie Photo</h3>
+          <div id="existing-projects"></div>
+          <button id="add-photo">
+            <p>Ajouter une photo</p>
+          </button>
+        </div>
+
+        <!-- Modal ajout projet -->
+        
+        <div class="modal-content-form">
+          <div class="back-and-close-form">
+            <button class="back-btn" id="back-form-modal">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="close-btn" id="close-modal-form">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <h3>Ajout photo</h3>
+          <form id="add-photo-form">
+            <div class="custom-file-upload" id="image-upload-container">
+              <i class="fa-regular fa-image" id="image-upload-icon"></i>
+              <label for="image"
+                ><button id="image-upload-btn">+ ajouter photo</button></label
+              >
+              <input
+                type="file"
+                id="image"
+                name="image"
+                accept=".png, .jpg, .jpeg"
+                style="display: none"
+              />
+              <p id="file-info-text">jpg, png: 4 mo max</p>
+              <img
+                id="uploaded-image"
+                src=""
+                alt="Uploaded Image"
+                style="display: none"
+              />
+            </div>
+  
+            <label for="title">Titre</label>
+            <input type="text" id="title" name="title" />
+  
+            <label for="project-category">Catégorie</label>
+            <select id="project-category" name="category">
+              <option value="" selected></option>
+              <option value="1">Objets</option>
+              <option value="2">Appartements</option>
+              <option value="3">Hotels & restaurants</option>
+            </select>
+            <div class="line">
+              <div id="form-error-message" class="hidden">
+                Veuillez remplir tous les champs.
+              </div>
+              <div id="form-success-message" class="form-success hidden">
+                Travail ajouté avec succès !
+              </div>
+            </div>
+  
+            <button id="btn-valider" class="submit-image" type="submit">
+              Valider
+            </button>
+          </form>
+        </div>
+      </div>
     <script src="./script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 </body>

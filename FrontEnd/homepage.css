@@ -148,7 +148,6 @@ a {
 
 .myprojets img {
     max-width: 95%;
-
 }
 
 /* .photo {
@@ -234,6 +233,37 @@ a {
     text-align: center;
 }
 
+.modal-content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    align-items: center;
+    margin: auto;
+    position: fixed;
+    top: 150px;
+    left: 20%;
+    right: 20%;
+    height: 550px;
+    overflow-y: auto;
+    z-index: 9999;
+}
+
+#existing-projects {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#close-modal {
+    border: none;
+    background-color: white;
+    margin-left: 850px;
+    margin-top: 25px;
+}
 .hidden {
     display: none; /*mis en dernier pour qu'il s'applique sur les balise à ne pas afficher au premier chargement de page*/
 }
