@@ -260,7 +260,7 @@ function myModal(isVisible) {
 //   allEditBtn.forEach((btn) => {
 //     btn.addEventListener("click", () => {
 //       myModal(true); // Affiche la modale
-   
+
 
 //   // Récupérer les images en les clonant pour les afficher dans la modal
 //   const imageModal = () => {
@@ -323,7 +323,7 @@ openModal();
 //       };
 //     });
 //   };
-  
+
 
 // closeModalOnClickOutside();
 // closeModal();
@@ -354,3 +354,14 @@ const closeModal = () => {
 };
 
 closeModal();
+
+const modalForm = () => {
+  const addPhoto = document.getElementById("add-photo");
+  addPhoto.forEach((button) => {
+    button.addEventListener("click", () => myModal(true));
+  });
+  const modalContentForm = document.querySelector(".modal-content-form");
+  modalContentForm.innerHTML = "";
+};
+
+
