@@ -305,4 +305,52 @@ function openModal() {
 openModal();
 
 
+// function closeModal() {
+//   const closeModalBtn = document.getElementById("close-modal");
+//   closeModalBtn.addEventListener("click", function(){
+//     myModal(false);
+//   });
+// };
 
+
+
+// function closeModalOnClickOutside() {
+//   const modal = document.querySelector(".modal-content")
+//   document.addEventListener("click", function(event) {
+//     // Vérifie si le clic n'est pas à l'intérieur de la modal
+//     if (!modal.contains(event.target)) {
+//       myModal(false) // Ferme la modal
+//       };
+//     });
+//   };
+  
+
+// closeModalOnClickOutside();
+// closeModal();
+
+const closeModal = () => {
+  // Sélectionne les boutons de fermeture de la modale
+  const closeModalButtons = document.querySelectorAll(
+    "#close-modal", "#close-modal-form");
+  // Ajoute un écouteur d'événement sur chaque bouton pour fermer la modale
+  closeModalButtons.forEach((button) => {
+    button.addEventListener("click", () => myModal(false));
+  });
+  const editModal = document.getElementById("edit-modal");
+  // Ferme la modale si l'utilisateur clique en dehors du contenu de la modale
+  if (editModal) {
+    editModal.addEventListener("click", (event) => {
+      const modalContent = document.querySelector(".modal-content");
+      // const modalContentForm = document.querySelector(".modal-content-form");
+      if (
+        !modalContent.contains(event.target)
+        // &&
+        // !modalContentForm.contains(event.target)
+      ) {
+        myModal(false);
+      }
+    });
+  }
+};
+
+closeModal();
