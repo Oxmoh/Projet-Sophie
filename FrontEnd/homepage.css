@@ -16,6 +16,9 @@
 
 #edit-mod-btn {
     cursor: pointer;
+    display: flex;
+    border-style: none;
+    background-color: black;
 }
 
 button p {
@@ -25,12 +28,6 @@ button p {
 .fa-pen-to-square {
     color: white;
     padding-right: 5px;
-}
-
-.open-modal {
-    display: flex;
-    border-style: none;
-    background-color: black;
 }
 
 .navbar {
@@ -235,7 +232,7 @@ a {
 
 .modal-content {
     background-color: #fff;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     border: 1px solid black;
     border-radius: 10px;
@@ -252,10 +249,8 @@ a {
 
 #existing-projects {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 70%;
 }
 
 #close-modal {

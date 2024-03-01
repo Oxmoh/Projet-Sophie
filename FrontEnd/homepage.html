@@ -2,174 +2,161 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Syne&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="homepage.css">
-    <title>Sophie Bluel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="homepage.css">
+  <title>Sophie Bluel</title>
 </head>
 
 <body>
 
-    <!-- Barre noire avec bouton de modification pour l'administrateur qui n'est pas visible de base-->
+  <!-- Barre noire avec bouton de modification pour l'administrateur qui n'est pas visible de base-->
 
-    <div id="admin-bar" class="admin-bar hidden">
-        <button id="edit-mod-btn" class="open-modal">
-            <i class="fa-regular fa-pen-to-square"></i>
-            <p>Mode edition</p>
-        </button>
+  <div id="admin-bar" class="admin-bar hidden">
+    <button id="edit-mod-btn" class="open-modal">
+      <i class="fa-regular fa-pen-to-square"></i>
+      <p>Mode edition</p>
+    </button>
+  </div>
+  <header>
+
+    <!-- Barre de navigation-->
+
+    <div class="navbar container">
+      <img src="icons/Logo.png">
+      <ul class="menu">
+        <li class="projet"><a href="">projets</a></li>
+        <li class="contact"><a href="#contact1" onclick="scrollToSection('contact1')">contact</a></li>
+        <li><a href="login.html" class="login">login</a></li>
+        <li class="insta-icone"><a href=""><img src="icons/instagram.png" alt="icone-instagram"></a></li>
+      </ul>
     </div>
-    <header>
+  </header>
+  <br>
+  <main>
 
-        <!-- Barre de navigation-->
+    <!-- Présentation avec photo-->
 
-        <div class="navbar container">
-            <img src="icons/Logo.png">
-            <ul class="menu">
-                <li class="projet"><a href="">projets</a></li>
-                <li class="contact"><a href="#contact1" onclick="scrollToSection('contact1')">contact</a></li>
-                <li><a href="login.html" class="login">login</a></li>
-                <li class="insta-icone"><a href=""><img src="icons/instagram.png" alt="icone-instagram"></a></li>
-            </ul>
-        </div>
-    </header>
-    <br>
-    <main>
-
-        <!-- Présentation avec photo-->
-
-        <div class="presentation container">
-            <img src="image/sophie-bluel.png" alt="Photo-de-Sophie">
-            <div class="text">
-                <h2>Designer d'espace</h2>
-                <br>
-                <p>Je raconte votre histoire, je valorise vos idées. Je vous<br>accompagne de la conception à la
-                    livraison
-                    finale du<br>chantier.<br><br>
-                    Chaque projet sera étudié en commun, de façon à mettre<br>en valeur les volumes, les matières et les
-                    couleurs dans le<br>respect de l’esprit des lieux, et le choix adapté des<br>matériaux. Le suivi du
-                    chantier sera assuré dans le souci<br>du détail, le respect du planning et du budget.<br><br>
-                    En cas de besoin, une équipe pluridisciplinaire peut être<br>constituée : architecte DPLG,
-                    décorateur(trice).</p>
-            </div>
-        </div>
-
-        <!-- Plusieurs bouton de choix pour filtrer par catégorie -->
-
-        <div class="projets">
-            <h2>Mes projets</h2>
-
-            <div class="filtres"></div>
-            <div class="myprojets"></div>
-
-            <!--Formulaire de contact-->
-
-            <div id="contact1">
-                <h2>Contact</h2>
-                <p>Vous avez un projet ? Discutons-en !</p>
-                <br>
-                <div class="formulaire container">
-                    <p>Nom</p><input type="text">
-                    <p>E-mail</p><input type="text">
-                    <p>Message</p><input type="text">
-                    </form>
-                </div>
-                <div class="button">
-                    <a href="" class="envoyer">Envoyer</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!--Footer-->
-
-    <div class="Mentions container">
-        <p>Mentions légales</p>
+    <div class="presentation container">
+      <img src="image/sophie-bluel.png" alt="Photo-de-Sophie">
+      <div class="text">
+        <h2>Designer d'espace</h2>
+        <br>
+        <p>Je raconte votre histoire, je valorise vos idées. Je vous<br>accompagne de la conception à la
+          livraison
+          finale du<br>chantier.<br><br>
+          Chaque projet sera étudié en commun, de façon à mettre<br>en valeur les volumes, les matières et les
+          couleurs dans le<br>respect de l’esprit des lieux, et le choix adapté des<br>matériaux. Le suivi du
+          chantier sera assuré dans le souci<br>du détail, le respect du planning et du budget.<br><br>
+          En cas de besoin, une équipe pluridisciplinaire peut être<br>constituée : architecte DPLG,
+          décorateur(trice).</p>
+      </div>
     </div>
 
-    <!-- Bloc parent modal -->
+    <!-- Plusieurs bouton de choix pour filtrer par catégorie -->
 
-    <div id="edit-modal" class="modal hidden">
-        <div class="modal-content">
-          <button class="close-btn" id="close-modal">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-          <h3 class="galerie-photo">Galerie Photo</h3>
-          <div id="existing-projects"></div>
-          <button id="add-photo">
-            <p>Ajouter une photo</p>
-          </button>
-        </div>
+    <div class="projets">
+      <h2>Mes projets</h2>
 
-        <!-- Modal ajout projet -->
-        
-        <div class="modal-content-form">
-          <div class="back-and-close-form">
-            <button class="back-btn" id="back-form-modal">
-              <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            <button class="close-btn" id="close-modal-form">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <h3>Ajout photo</h3>
-          <form id="add-photo-form">
-            <div class="custom-file-upload" id="image-upload-container">
-              <i class="fa-regular fa-image" id="image-upload-icon"></i>
-              <label for="image"
-                ><button id="image-upload-btn">+ ajouter photo</button></label
-              >
-              <input
-                type="file"
-                id="image"
-                name="image"
-                accept=".png, .jpg, .jpeg"
-                style="display: none"
-              />
-              <p id="file-info-text">jpg, png: 4 mo max</p>
-              <img
-                id="uploaded-image"
-                src=""
-                alt="Uploaded Image"
-                style="display: none"
-              />
-            </div>
-  
-            <label for="title">Titre</label>
-            <input type="text" id="title" name="title" />
-  
-            <label for="project-category">Catégorie</label>
-            <select id="project-category" name="category">
-              <option value="" selected></option>
-              <option value="1">Objets</option>
-              <option value="2">Appartements</option>
-              <option value="3">Hotels & restaurants</option>
-            </select>
-            <div class="line">
-              <div id="form-error-message" class="hidden">
-                Veuillez remplir tous les champs.
-              </div>
-              <div id="form-success-message" class="form-success hidden">
-                Travail ajouté avec succès !
-              </div>
-            </div>
-  
-            <button id="btn-valider" class="submit-image" type="submit">
-              Valider
-            </button>
+      <div class="filtres"></div>
+      <div class="myprojets"></div>
+
+      <!--Formulaire de contact-->
+
+      <div id="contact1">
+        <h2>Contact</h2>
+        <p>Vous avez un projet ? Discutons-en !</p>
+        <br>
+        <div class="formulaire container">
+          <p>Nom</p><input type="text">
+          <p>E-mail</p><input type="text">
+          <p>Message</p><input type="text">
           </form>
         </div>
+        <div class="button">
+          <a href="" class="envoyer">Envoyer</a>
+        </div>
       </div>
-    <script src="./script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    </div>
+  </main>
+
+  <!--Footer-->
+
+  <div class="Mentions container">
+    <p>Mentions légales</p>
+  </div>
+
+  <!-- Bloc parent modal -->
+
+  <div id="edit-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="close-btn" id="close-modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 class="galerie-photo">Galerie Photo</h3>
+      <div id="existing-projects"></div>
+      <button id="add-photo">
+        <p>Ajouter une photo</p>
+      </button>
+    </div>
+
+    <!-- Modal ajout projet -->
+
+    <div class="modal-content-form">
+      <div class="back-and-close-form">
+        <button class="back-btn" id="back-form-modal">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="close-btn" id="close-modal-form">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <h3>Ajout photo</h3>
+      <form id="add-photo-form">
+        <div class="custom-file-upload" id="image-upload-container">
+          <i class="fa-regular fa-image" id="image-upload-icon"></i>
+          <label for="image"><button id="image-upload-btn">+ ajouter photo</button></label>
+          <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" style="display: none" />
+          <p id="file-info-text">jpg, png: 4 mo max</p>
+          <img id="uploaded-image" src="" alt="Uploaded Image" style="display: none" />
+        </div>
+
+        <label for="title">Titre</label>
+        <input type="text" id="title" name="title" />
+
+        <label for="project-category">Catégorie</label>
+        <select id="project-category" name="category">
+          <option value="" selected></option>
+          <option value="1">Objets</option>
+          <option value="2">Appartements</option>
+          <option value="3">Hotels & restaurants</option>
+        </select>
+        <div class="line">
+          <div id="form-error-message" class="hidden">
+            Veuillez remplir tous les champs.
+          </div>
+          <div id="form-success-message" class="form-success hidden">
+            Travail ajouté avec succès !
+          </div>
+        </div>
+
+        <button id="btn-valider" class="submit-image" type="submit">
+          Valider
+        </button>
+      </form>
+    </div>
+  </div>
+  <script src="./script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
 </body>
 
 </html>
