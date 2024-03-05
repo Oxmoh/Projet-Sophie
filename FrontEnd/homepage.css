@@ -230,7 +230,7 @@ a {
     text-align: center;
 }
 
-.modal-content {
+#edit-modal {
     background-color: #fff;
     /* display: flex; */
     flex-direction: column;
@@ -282,6 +282,21 @@ h3 {
     margin-left: 40%;
     margin-bottom: 10%;
     margin-top: 5%;
+    cursor: pointer;
+}
+
+#btn-valider {
+    font-family: 'Syne', sans-serif;
+    background-color: grey;
+    color: white;
+    border-radius: 60px;
+    border: 1px solid #ccc;
+    padding: 6px;
+    padding-left: 65px;
+    padding-right: 65px;
+    margin-left: 40%;
+    margin-top: 28%;
+    cursor: pointer;
 }
 
 .delete-icon {
@@ -290,11 +305,19 @@ h3 {
     margin-top: 5px;
 }
 
-#close-modal {
+#close-modal, #close-modal-form {
     border: none;
     background-color: white;
-    margin-left: 880px;
+    margin-left: 870px;
     margin-top: 25px;
+    cursor: pointer;
+}
+
+.back-btn {
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+    padding-left: 10px;
 }
 
 .hidden {

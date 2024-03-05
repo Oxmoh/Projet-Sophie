@@ -355,13 +355,25 @@ const closeModal = () => {
 
 closeModal();
 
+
 const modalForm = () => {
   const addPhoto = document.getElementById("add-photo");
-  addPhoto.forEach((button) => {
-    button.addEventListener("click", () => myModal(true));
-  });
+  const modalContent = document.querySelector(".modal-content");
   const modalContentForm = document.querySelector(".modal-content-form");
-  modalContentForm.innerHTML = "";
+  const backFormModal = document.getElementById("back-form-modal");
+  if (addPhoto) {
+    addPhoto.addEventListener("click", () => {
+      modalContent.classList.add("hidden");
+      modalContentForm.classList.remove("hidden");
+    });
+  };
+  if (backFormModal) {
+    backFormModal.addEventListener("click", () => {
+      modalContentForm.classList.add("hidden");
+      modalContent.classList.remove("hidden");
+    });
+};
 };
 
+modalForm();
 
