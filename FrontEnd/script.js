@@ -341,11 +341,11 @@ const closeModal = () => {
   if (editModal) {
     editModal.addEventListener("click", (event) => {
       const modalContent = document.querySelector(".modal-content");
-      // const modalContentForm = document.querySelector(".modal-content-form");
+      const modalContentForm = document.querySelector(".modal-content-form");
       if (
         !modalContent.contains(event.target)
-        // &&
-        // !modalContentForm.contains(event.target)
+        &&
+        !modalContentForm.contains(event.target)
       ) {
         myModal(false);
       }
@@ -363,7 +363,7 @@ const modalForm = () => {
   if (addPhoto) {
     addPhoto.addEventListener("click", () => {
       modalContent.classList.add("hidden");
-      modalContentForm.classList.remove("hidden");
+      modalContentForm.classList.remove("fog");
     });
   };
 };
@@ -374,11 +374,11 @@ const backFormModal = () => {
   const modalContentForm = document.querySelector(".modal-content-form");
   if (backFormModal) {
     backFormModal.addEventListener("click", () => {
-      modalContentForm.classList.add("hidden");
+      modalContentForm.classList.add("fog");
       modalContent.classList.remove("hidden");
     });
   };
-}
+};
 
 modalForm();
 backFormModal();

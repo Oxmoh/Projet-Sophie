@@ -320,6 +320,11 @@ h3 {
     padding-left: 10px;
 }
 
+.fog {
+    display: none;
+}
+
 .hidden {
     display: none; /*mis en dernier pour qu'il s'applique sur les balise à ne pas afficher au premier chargement de page*/
 }
+
