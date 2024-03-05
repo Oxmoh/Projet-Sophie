@@ -341,11 +341,11 @@ const closeModal = () => {
   if (editModal) {
     editModal.addEventListener("click", (event) => {
       const modalContent = document.querySelector(".modal-content");
-      const modalContentForm = document.querySelector(".modal-content-form");
+      // const modalContentForm = document.querySelector(".modal-content-form");
       if (
         !modalContent.contains(event.target)
-        &&
-        !modalContentForm.contains(event.target)
+        // &&
+        // !modalContentForm.contains(event.target)
       ) {
         myModal(false);
       }
@@ -356,30 +356,30 @@ const closeModal = () => {
 closeModal();
 
 
-const modalForm = () => {
-  const addPhoto = document.getElementById("add-photo");
-  const modalContent = document.querySelector(".modal-content");
-  const modalContentForm = document.querySelector(".modal-content-form");
-  if (addPhoto) {
-    addPhoto.addEventListener("click", () => {
-      modalContent.classList.add("hidden");
-      modalContentForm.classList.remove("fog");
-    });
-  };
-};
+// const modalForm = () => {
+//   const addPhoto = document.getElementById("add-photo");
+//   const modalContent = document.querySelector(".modal-content");
+//   const modalContentForm = document.querySelector(".modal-content-form");
+//   if (addPhoto) {
+//     addPhoto.addEventListener("click", () => {
+//       modalContent.classList.add("fog");
+//       modalContentForm.classList.remove("fog");
+//     });
+//   };
+// };
 
-const backFormModal = () => {
-  const backFormModal = document.getElementById("back-form-modal");
-  const modalContent = document.querySelector(".modal-content");
-  const modalContentForm = document.querySelector(".modal-content-form");
-  if (backFormModal) {
-    backFormModal.addEventListener("click", () => {
-      modalContentForm.classList.add("fog");
-      modalContent.classList.remove("hidden");
-    });
-  };
-};
+// const backFormModal = () => {
+//   const backFormModal = document.getElementById("back-form-modal");
+//   if (backFormModal) {
+//     backFormModal.addEventListener("click", () => {
+//       const modalContent = document.querySelector(".modal-content");
+//       const modalContentForm = document.querySelector(".modal-content-form");
+//       modalContentForm.classList.add("fog");
+//       modalContent.classList.remove("fog");
+//     });
+//   };
+// };
 
-modalForm();
-backFormModal();
+// modalForm();
+// backFormModal();
 
