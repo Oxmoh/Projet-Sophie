@@ -256,7 +256,7 @@ checkTokenLogin();
 
 function myModal(isVisible) {
   const editModal = document.getElementById("edit-modal");
-  editModal.classList.toggle("mystyle");
+  editModal.classList.toggle("myprojets");
   if (editModal) {
     // Ajoute ou retire la classe "hidden" en fonction de l'argument isVisible
     editModal.classList.toggle("hidden", !isVisible);
@@ -340,7 +340,7 @@ openModal();
 const closeModal = () => {
   // Sélectionne les boutons de fermeture de la modale
   const closeModalButtons = document.querySelectorAll(
-    "#close-modal", "#close-modal-form");
+    "#close-modal, #close-modal-form");
   // Ajoute un écouteur d'événement sur chaque bouton pour fermer la modale
   closeModalButtons.forEach((button) => {
     button.addEventListener("click", () => myModal(false));
@@ -350,6 +350,7 @@ const closeModal = () => {
   if (editModal) {
     editModal.addEventListener("click", (event) => {
       const modalContent = document.querySelector(".modal-content");
+      console.log(modalContent);
       const modalContentForm = document.querySelector(".modal-content-form");
       if (
         !modalContent.contains(event.target)
